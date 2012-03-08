@@ -1,0 +1,36 @@
+<?php
+class persona{
+  protected $nombre;
+  protected $edad;
+  
+  public function cargar($n,$e){
+      $this->nombre=$n;
+      $this->edad=$e;
+  }
+  public function mostrar(){
+    	echo "<br>"." Mi nombre es: ".$this->nombre." y tengo ".$this->edad." años.";
+  }
+}
+class empleado extends persona{
+	protected $sueldo;
+	
+	public function cargar_sueldo($s){
+		$this->sueldo =$s;
+	}
+	public function mostrar_sueldo(){
+		echo " Mi sueldo es de $ ".$this->sueldo;
+	}
+	public function completo(){
+		echo " Mi nombre es: ".$this->nombre." y tengo ".$this->edad." años.";
+	}
+}
+$ale = new persona();
+$ale->cargar("Alejandro",26);
+$ale->mostrar();
+
+$ale_e = new empleado();
+$ale_e->cargar("tito",21);
+$ale_e->completo();
+$ale_e->cargar_sueldo(3400);
+$ale_e->mostrar_sueldo();
+?>
